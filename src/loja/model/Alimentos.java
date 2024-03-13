@@ -20,7 +20,7 @@ public class Alimentos extends Loja {
 	@Override
 	public boolean removerEstoque(int itens) {
 
-		if (this.getQuantidade() + this.getLimite() < itens) {
+		if (this.getQuantidade() + this.getLimite() > itens) {
 			System.out.println("\n Retire menos itens!");
 			return false;
 		}

@@ -3,7 +3,7 @@ package loja;
 import java.util.Scanner;
 
 import loja.util.Cores;
-import loja.model.Loja;
+import loja.model.Alimentos;
 
 public class Menu {
 
@@ -26,7 +26,9 @@ public class Menu {
 			System.out.println("            3 - Consultar Produto por Código         ");
 			System.out.println("            4 - Atualizar Dados de um Produto        ");
 			System.out.println("            5 - Apagar Produto                       ");
-			System.out.println("            6 - Sair                                 ");
+			System.out.println("            6 - Remover Estoque                      ");
+			System.out.println("            7 - Adicionar Estoque                    ");
+			System.out.println("            8 - Sair                                 ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
@@ -34,7 +36,7 @@ public class Menu {
 
 			opcao = leia.nextInt();
 
-			if (opcao == 6) {
+			if (opcao == 8) {
 				System.out.println("\nFluffy Pets - A loja onde a fofura encontra seu lar");
 				sobre();
                  leia.close();
@@ -62,6 +64,15 @@ public class Menu {
 					System.out.println("Apagar Produto\n\n");
 
 					break;
+				case 6:
+					System.out.println("Remover Estoque\n\n");
+
+					break;
+				case 7:
+					System.out.println("Adicionar Estoque\n\n");
+
+					break;
+					
 				default:
 					System.out.println("\nOpção Inválida!\n");
 					break;
