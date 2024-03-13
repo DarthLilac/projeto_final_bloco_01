@@ -7,7 +7,6 @@ public abstract class Loja {
 	private float valor;
 
 	public Loja(int codigo, int quantidade, int tipo, String produto, float valor) {
-		super();
 		this.codigo = codigo;
 		this.quantidade = quantidade;
 		this.tipo = tipo;
