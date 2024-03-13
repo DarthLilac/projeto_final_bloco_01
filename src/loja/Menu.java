@@ -3,6 +3,7 @@ package loja;
 import java.util.Scanner;
 
 import loja.util.Cores;
+import loja.model.Loja;
 
 public class Menu {
 
