@@ -8,7 +8,6 @@ public class LojaController implements LojaRepository{
 
 	
 	int codigo = 0;
-	
 	public ArrayList<Loja> listaLoja= new ArrayList<Loja>();
 
 	@Override

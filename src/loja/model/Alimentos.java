@@ -2,25 +2,25 @@ package loja.model;
 
 public class Alimentos extends Loja {
 
-	private int validade;
+    String marcaAlimento;
 
-	public Alimentos(int codigo, int quantidade, int tipo, String produto, float valor, int validade) {
-		super(codigo, quantidade, tipo, produto, valor);
-		this.validade = validade;
+	public Alimentos(int codigo, String produto, int tipo, String marca, float valor, String marcaAlimento) {
+		super(codigo, produto, tipo, marca, valor);
+		this.marcaAlimento = marcaAlimento;
 	}
 
-	public int getValidade() {
-		return validade;
+	public String getMarcaAlimento() {
+		return marcaAlimento;
 	}
 
-	public void setValidade(int validade) {
-		this.validade = validade;
+	public void setMarcaAlimento(String marcaAlimento) {
+		this.marcaAlimento = marcaAlimento;
 	}
 
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.println("Validade do produto: " + this.validade);
+		System.out.println("Marca do produto: " + this.marcaAlimento);
 	}
 
 }

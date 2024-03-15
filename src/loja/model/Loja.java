@@ -2,16 +2,24 @@ package loja.model;
 
 public abstract class Loja {
 
-	private int codigo, quantidade, tipo;
-	private String produto;
-	private float valor;
+	int codigo, tipo;
+	String produto, marca;
+	float valor;
 
-	public Loja(int codigo, int quantidade, int tipo, String produto, float valor) {
+	public Loja(int codigo, String produto, int tipo, String marca, float valor) {
 		this.codigo = codigo;
-		this.quantidade = quantidade;
 		this.tipo = tipo;
 		this.produto = produto;
 		this.valor = valor;
+		this.marca = marca;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
 
 	public int getCodigo() {
@@ -20,14 +28,6 @@ public abstract class Loja {
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
-	}
-
-	public int getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
 	}
 
 	public int getTipo() {
@@ -54,22 +54,6 @@ public abstract class Loja {
 		this.valor = valor;
 	}
 
-	public boolean removerEstoque(int itens) {
-
-		if (this.getQuantidade() < itens) {
-			System.out.println("\n Estoque insuficiente!");
-			return false;
-		}
-
-		this.setQuantidade(this.getQuantidade() - itens);
-		return true;
-	}
-
-	public void adicionarEstoque(int itens) {
-
-		this.setQuantidade(this.getQuantidade() + itens);
-	}
-
 	public void visualizar() {
 
 		String tipo = "";
@@ -81,9 +65,6 @@ public abstract class Loja {
 		case 2:
 			tipo = "Brinquedos";
 			break;
-		case 3:
-			tipo = "Acessórios";
-			break;
 		}
 
 		System.out.println("\n\n***********************************************************");
@@ -91,8 +72,8 @@ public abstract class Loja {
 		System.out.println("***********************************************************");
 		System.out.println("Código do Produto: " + this.codigo);
 		System.out.println("Produto: " + this.produto);
+		System.out.println("Marca do produto: " + this.marca);
 		System.out.println("Tipo do Produto: " + tipo);
-		System.out.println("Quantidade: " + this.quantidade);
 		System.out.println("Valor: " + this.valor);
 
 	}
