@@ -17,14 +17,14 @@ public class Menu {
 
         int opcao = 0;
         int codigoProduto, tipo;
-        String produto, marca, marcaAlimento, tipoBrinquedo;
+        String produto, marca, categoriaAlimento, tipoBrinquedo;
         float valor;   
         int codigoInicio = 0;
         Scanner leia = new Scanner(System.in);
         
         while (opcao != 6) {
 
-            System.out.println(Cores.TEXT_PURPLE + Cores.ANSI_BLACK_BACKGROUND + "*****************************************************");
+            System.out.println(Cores.TEXT_PURPLE_BOLD + Cores.ANSI_BLACK_BACKGROUND + "*****************************************************");
             System.out.println("                                                     ");
             System.out.println("                    Fluffy Pets                      ");
             System.out.println("                                                     ");
@@ -50,14 +50,14 @@ public class Menu {
 			}
 			
 			if (opcao == 6) {
-				System.out.println(Cores.TEXT_CYAN_BOLD + "\nFluffy Pets - A loja onde a fofura encontra seu lar");
+				System.out.println(Cores.TEXT_PURPLE_BOLD + Cores.ANSI_BLACK_BACKGROUND + "\nFluffy Pets - A loja onde a fofura encontra seu lar");
 				leia.close();
 				System.exit(0);
 			}
             
             switch (opcao) {
                 case 1:
-                    System.out.println(Cores.TEXT_CYAN_BOLD +"Cadastrar Produto\n\n");
+                    System.out.println(Cores.TEXT_PURPLE_BOLD + Cores.ANSI_BLACK_BACKGROUND +"Cadastrar Produto\n\n");
                     System.out.print("Digite o nome do produto:");
 					produto = leia.next();
 					do {
@@ -72,14 +72,14 @@ public class Menu {
                     
 					switch(tipo) {
 					case 1 -> {
-						System.out.print("Digite a marca do alimento:) ==> ");
-						marcaAlimento = leia.next();
+						System.out.print("Digite categoria do Produto [Filhote, Adulto ou Sênior]:");
+						categoriaAlimento = leia.next();
 						codigoInicio += 1;
 						codigoProduto = codigoInicio;
-						produtos.cadastrar(new Alimentos(codigoProduto, produto, tipo, marca, valor, marcaAlimento));
+						produtos.cadastrar(new Alimentos(codigoProduto, produto, tipo, marca, valor, categoriaAlimento));
 					}
 					case 2 -> {
-						System.out.print("Digite o tipo de brinquedo: (Pelúcia ou Plástico) ==> ");
+						System.out.print("Digite o tipo de brinquedo: [Pelúcia ou Plástico]:");
 						tipoBrinquedo = leia.next();
 						codigoInicio += 1;
 						codigoProduto = codigoInicio;
@@ -119,12 +119,12 @@ public class Menu {
 						
 						switch(tipo) {
 							case 1 -> {
-								System.out.print("Digite a marca de celular compatível com o produto(se for compatível com todos os celulares, digite 'todas') ==> ");
-								marcaAlimento = leia.next();
-								produtos.cadastrar(new Alimentos(codigoProduto, produto, tipo, marca, valor, marcaAlimento));
+								System.out.print("Digite a categoria do produto):");
+								categoriaAlimento = leia.next();
+								produtos.cadastrar(new Alimentos(codigoProduto, produto, tipo, marca, valor, categoriaAlimento));
 							}
 							case 2 -> {
-								System.out.print("Digite o tipo de computador(notebook ou desktop) compatível com o produto (se for compatível com todos, digite 'todos') ==> ");
+								System.out.print("Digite o tipo de brinquedo):");
 								tipoBrinquedo = leia.next();
 								produtos.cadastrar(new Brinquedos(codigoProduto, produto, tipo, marca, valor, tipoBrinquedo));
 							}
