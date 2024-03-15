@@ -10,7 +10,7 @@ public interface LojaRepository {
 		public void atualizar(Loja produto);
 		public void deletar(int codigo);
 		
-		public void removerEstoque(int codigo, int itens);
-		public void adicionarEstoque(int codigo, int itens);
+		//public void removerEstoque(int codigo, int itens);
+		//public void adicionarEstoque(int codigo, int itens);
 
 }

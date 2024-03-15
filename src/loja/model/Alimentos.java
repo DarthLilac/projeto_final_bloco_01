@@ -2,37 +2,25 @@ package loja.model;
 
 public class Alimentos extends Loja {
 
-	private int limite;
+    String marcaAlimento;
 
-	public Alimentos(int codigo, int quantidade, int tipo, String produto, float valor, int validade, int limite) {
-		super(codigo, quantidade, tipo, produto, valor);
-		this.limite = limite;
+	public Alimentos(int codigo, String produto, int tipo, String marca, float valor, String marcaAlimento) {
+		super(codigo, produto, tipo, marca, valor);
+		this.marcaAlimento = marcaAlimento;
 	}
 
-	public int getLimite() {
-		return limite;
+	public String getMarcaAlimento() {
+		return marcaAlimento;
 	}
 
-	public void setLimite(int quantidade) {
-		this.limite = limite;
+	public void setMarcaAlimento(String marcaAlimento) {
+		this.marcaAlimento = marcaAlimento;
 	}
 
-	@Override
-	public boolean removerEstoque(int itens) {
-
-		if (this.getQuantidade() + this.getLimite() > itens) {
-			System.out.println("\n Retire menos itens!");
-			return false;
-		}
-
-		this.setQuantidade(this.getQuantidade() - itens);
-		return true;
-	}
-	
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.println("Limite de Retirada: " + this.limite);
+		System.out.println("Marca do produto: " + this.marcaAlimento);
 	}
 
 }
